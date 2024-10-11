@@ -1,8 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { EstudianteDto } from './estudiante.dto';
-import { DataSource } from 'typeorm';
 import { InjectDataSource } from '@nestjs/typeorm';
-import { waitForDebugger } from 'inspector';
+import { DataSource } from 'typeorm';
+import { EstudianteDto } from '../dto/estudiante.dto';
 
 @Injectable()
 export class ConexionService {

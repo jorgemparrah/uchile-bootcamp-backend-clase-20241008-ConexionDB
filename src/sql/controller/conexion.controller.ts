@@ -1,7 +1,7 @@
 import { BadRequestException, Controller, Get, Param, Res } from '@nestjs/common';
-import { AppService } from './app.service';
-import { ConexionService } from './conexion.service';
-import { EstudianteDto } from './estudiante.dto';
+import { AppService } from '../../asincrono/service/app.service';
+import { ConexionService } from '../service/conexion.service';
+import { EstudianteDto } from '../dto/estudiante.dto';
 
 @Controller("consultas")
 export class ConexionController {

@@ -1,22 +1,17 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConexionController } from './conexion.controller';
-import { ConexionService } from './conexion.service';
+import { AsincronoModule } from './asincrono/asincrono.module';
+import { OrmModule } from './orm/orm.module';
+import { SqlModule } from './sql/sql.module';
+import { UniversidadModule } from './universidad/universidad.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'db',
-      port: 3306,
-      username: 'root',
-      password: '12345678',
-      database: 'universidad'
-    })
+    AsincronoModule,
+    SqlModule,
+    OrmModule,
+    UniversidadModule
   ],
-  controllers: [AppController, ConexionController],
-  providers: [AppService, ConexionService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
