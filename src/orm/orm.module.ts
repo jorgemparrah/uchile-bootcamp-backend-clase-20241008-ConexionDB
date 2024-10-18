@@ -18,6 +18,7 @@ import { Deporte } from './entity/deporte';
       username: 'root',
       password: '12345678',
       database: 'universidad',
+      logging: true,
       entities: [
         Automovil,
         Calificacion,
