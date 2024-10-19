@@ -1,7 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { UniversidadModule } from './universidad/universidad.module';
+import { AppModule } from './app.module';
+import { CursosModule } from './cursos/cursos.module';
+import { ProfesoresModule } from './profesores/profesores.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -13,7 +14,7 @@ async function bootstrap() {
     .addTag('Ejemplos')
     .build();
   const document = SwaggerModule.createDocument(app, config, {
-    include: [ UniversidadModule ], // OPCIONAL - PARA APLICAR A SOLO ALGUNOS MODULOS
+    include: [ ProfesoresModule, CursosModule ], // OPCIONAL - PARA APLICAR A SOLO ALGUNOS MODULOS
   });
   SwaggerModule.setup('api', app, document);
 
